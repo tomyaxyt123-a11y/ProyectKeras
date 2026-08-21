@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRISP-ML(Q) Image Classifier - Feibert vs Tomas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                <span>CRISP-ML Classifier</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#understanding">Comprensión</a></li>
+                    <li><a href="#pipeline">Fases CRISP-ML</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                </ul>
+            </nav>
+            <a href="http://localhost:8501" target="_blank" class="btn-launch">
+                <i class="fa-solid fa-rocket"></i> Iniciar Dashboard
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge-crisp">
+                <i class="fa-solid fa-circle-check"></i> Ciclo CRISP-ML(Q) Activo
+            </div>
+            <h1>Clasificador de Imágenes con <span>Keras & Streamlit</span></h1>
+            <p>Una implementación robusta e industrial del ciclo de vida de Machine Learning para detectar y clasificar rostros entre Feibert (David) y Tomas.</p>
+            <div style="margin-top: 1rem;">
+                <a href="#pipeline" class="btn-launch" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); box-shadow: none; margin-right: 1rem;">
+                    Ver Metodología
+                </a>
+                <a href="http://localhost:8501" target="_blank" class="btn-launch">
+                    Probar Inferencia <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Understanding Section -->
+    <section id="understanding">
+        <h2 class="section-title">Objetivos del Negocio & Datos</h2>
+        <p class="section-subtitle">Estableciendo los requerimientos técnicos y comerciales iniciales para resolver la identificación de rostros.</p>
+        
+        <div class="info-grid">
+            <div class="glass-card info-card">
+                <h3><i class="fa-solid fa-crosshairs"></i> Objetivos del Proyecto</h3>
+                <p>Desarrollar un sistema de clasificación de imágenes en tiempo real capaz de distinguir entre Feibert (David) y Tomas con una precisión (Accuracy) superior al 90% y un tiempo de inferencia inferior a 150ms.</p>
+            </div>
+            <div class="glass-card info-card">
+                <h3><i class="fa-solid fa-database"></i> Adquisición de Datos</h3>
+                <p>Colección de muestras fotográficas en formato RGB tomadas bajo diferentes condiciones de iluminación, ángulos y fondos para asegurar la generalización del modelo frente a variaciones externas.</p>
+            </div>
+            <div class="glass-card info-card">
+                <h3><i class="fa-solid fa-triangle-exclamation"></i> Evaluación de Riesgos</h3>
+                <p>Controlar falsos positivos y falsos negativos implementando un umbral de confianza ajustable en producción. Si la predicción cae por debajo del umbral, se marca como 'Incierto' para revisión manual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRISP-ML Timeline -->
+    <section id="pipeline" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+        <h2 class="section-title">Fases Metodológicas CRISP-ML(Q)</h2>
+        <p class="section-subtitle">El estándar de la industria aplicado de principio a fin para garantizar la calidad y sostenibilidad del clasificador.</p>
+
+        <div class="timeline">
+            
+            <!-- Phase 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 1</div>
+                    <h3>Comprensión del Negocio y Datos</h3>
+                    <p>Definición del problema de identificación y determinación de las métricas clave de éxito (KPIs) de machine learning para el caso de negocio.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">KPIs</span>
+                        <span class="timeline-tag">Viabilidad</span>
+                        <span class="timeline-tag">Inventario</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 2</div>
+                    <h3>Preparación de Datos</h3>
+                    <p>Las imágenes crudas se redimensionan a 224x224 píxeles con 3 canales (RGB). Se normalizan sus valores numéricos a un rango de [-1, 1] antes de ser alimentadas a la red neuronal.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Normalización</span>
+                        <span class="timeline-tag">Resizing</span>
+                        <span class="timeline-tag">Teachable Machine</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 3</div>
+                    <h3>Modelado</h3>
+                    <p>Entrenamiento y exportación de un modelo convolucional profundo (CNN) basado en la arquitectura Keras. El modelo aprende características faciales jerárquicas complejas.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Keras CNN</span>
+                        <span class="timeline-tag">keras_model.h5</span>
+                        <span class="timeline-tag">Arquitectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 4</div>
+                    <h3>Evaluación del Modelo</h3>
+                    <p>Análisis de matrices de confusión y curvas de precisión. Validación en tiempo real midiendo el score de confianza de la predicción final frente a un umbral configurable.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Accuracy</span>
+                        <span class="timeline-tag">Threshold</span>
+                        <span class="timeline-tag">Matriz de Confusión</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 5</div>
+                    <h3>Despliegue</h3>
+                    <p>Inferencia interactiva expuesta mediante una aplicación web ligera en Streamlit. Soporta subida de archivos (PNG/JPG) e inferencia en vivo con la cámara web.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Streamlit</span>
+                        <span class="timeline-tag">Inferencia en vivo</span>
+                        <span class="timeline-tag">Webcam API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-phase-num">Fase 6</div>
+                    <h3>Monitoreo y Mantenimiento</h3>
+                    <p>Mecanismo de feedback en producción que registra logs de predicciones y permite marcar clasificaciones incorrectas para almacenarlas en un pool de reentrenamiento futuro.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag">Logs</span>
+                        <span class="timeline-tag">Feedback Loop</span>
+                        <span class="timeline-tag">Data Drift</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call To Action / Deployment Launch -->
+    <section class="cta-section">
+        <div class="glass-card" style="max-width: 800px; margin: 0 auto; border-color: rgba(139, 92, 246, 0.2);">
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem;">¿Listo para probar la inferencia?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Accede al dashboard interactivo para subir imágenes o usar tu cámara, y monitorear las métricas de rendimiento en tiempo real.</p>
+            <a href="http://localhost:8501" target="_blank" class="btn-launch" style="padding: 0.8rem 2.5rem; font-size: 1.1rem;">
+                <i class="fa-solid fa-play"></i> Iniciar Aplicación Streamlit
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p><strong>CRISP-ML Classifier Project</strong></p>
+                <p>Creado para la clasificación de rostros de Feibert (David) y Tomas.</p>
+            </div>
+            <div>
+                <ul class="footer-links">
+                    <li><a href="http://localhost:8501" target="_blank">Streamlit App</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> Repository</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
